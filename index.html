@@ -12,38 +12,16 @@
 <body>
   <div class="header">
     <h1>Agenda</h1>
-    <button class="button">+ Nuevo Contacto</button>
+    <button onclick="abrirModal()" class="button">+ Nuevo Contacto</button>
   </div>
   <div class="main">
-    <ul class="contactos" id="contactos">
-      <li class="contacto">
-        <div class="actions">
-          <a><i class="fa fa-trash"></i></a>
-        </div>
-        <i class="userIcon fa fa-user"></i>
-        <h4 class="nombre">Ana López</h4>
-        <div class="datos">
-          <div class="dato">
-            <i class="fa fa-building"></i>
-            <span>Ibero</span>
-          </div>
-          <div class="dato">
-            <i class="fa fa-envelope"></i>
-            <a href="mailto:analopez@gmail.com">analopez@gmail.com</a>
-          </div>
-          <div class="dato">
-            <i class="fa fa-phone"></i>
-            <a href="tel:55555555">55555555</a>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <ul class="contactos" id="contactos"></ul>
     <div id="modal" class="modal">
       <div class="modal-bg">
         <div class="modal-container">
           <div class="modal-header">
             <h2 class="modal-title">Nuevo Contacto</h2>
-            <a><i class="fa fa-times"></i></a>
+            <a href="javascript: cerrarModal()"><i class="fa fa-times"></i></a>
           </div>
           <div class="modal-body">
             <div class="field-group">
@@ -65,12 +43,13 @@
             <ul class="errores" id="errores"></ul>
           </div>
           <div class="modal-footer">
-            <button class="button">Agregar Contacto</button>
+            <button onclick="agregarContacto()" class="button">Agregar Contacto</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script src="./validarPassword.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
