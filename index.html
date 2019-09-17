@@ -9,68 +9,65 @@
   <link rel="stylesheet" href="./style.css">
   <title>Agenda Telefónica</title>
 </head>
-<body>
+<body>     
   <div class="header">
     <h1>Agenda</h1>
-    <button class="button">+ Nuevo Contacto</button>
+      <a href = "javascript:abrirFormulario()" class="button"><span>+ Nuevo Contacto</span></a>
   </div>
   <div class="main">
     <ul class="contactos" id="contactos">
-      <li class="contacto">
-        <div class="actions">
-          <a><i class="fa fa-trash"></i></a>
+        <li class="lista" id="lista"></li>
+        <li class="lista2" id="lista2"></li>
+        <li class="lista3" id="lista3"></li>
+        <li class="lista4" id="lista4"></li>
+          </ul>
+        <div id="modal" class="modal">
+            <div class="modal-bg">
+              <div class="modal-container">
+                <div class="modal-header">
+                  <h2 class="modal-title">Nuevo Contacto</h2>
+                  <!--<a><i class="fa fa-times"></i></a>-->
+                   <!--<button class= "iconButton">
+                   <a href="javascript:cerrarFormulario()"><span><i class="fas fa-times" id="iconoX"></span></i></a>
+                    </button>-->
+                    <!--<button class= "iconButton">
+                    <a href = ><span onclick="document.getElementById('modal').style.display='none'"><i class="fas fa-times" id="iconoX"></i></span></a>
+                  </button>-->
+                    <a href = "javascript:cerrarFormulario()"><span><i class="fas fa-times" id="iconoX"></i></span></a>
+                </div>
+                <div class="modal-body">
+                  <div class="field-group">
+                    <form>
+                      Nombre:<br>
+                      <input type="text" size="40" id="tx1">
+                      <span id="msg"></span>
+                      <br><br>
+                      <!--<label for="name">Name: </label><input id="name" type="text"/>-->
+                      Empresa:<br>
+                      <input type="text" size="40" id="tx2">
+                      <span id="msg2"></span>
+                      <br><br>
+                      Email:<br>
+                      <input type="email" size="40" id="em">
+                      <span id="msg3"></span>
+                      <br><br>
+                      Telefono:<br>
+                      <input type="text" size="40" id="tx3">
+                      <span id="msg4"></span>
+                      <br><br>
+                      </form> 
+                  <ul class="errores" id="errores"></ul>
+                </div>
+                <div class="modal-footer">
+                  <a href = "javascript:cerrarFormularioAgregandoContacto()" id="submit" class="button"><span>Agregar Contacto</span></a>
+                  <!-- <a href = "javascript:cerrarFormularioAgregandoContacto()" id="submit" class="button" onclick="agregarMasAgendas()"><span>Agregar Contacto</span></a>-->
+                
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <i class="userIcon fa fa-user"></i>
-        <h4 class="nombre">Ana López</h4>
-        <div class="datos">
-          <div class="dato">
-            <i class="fa fa-building"></i>
-            <span>Ibero</span>
-          </div>
-          <div class="dato">
-            <i class="fa fa-envelope"></i>
-            <a href="mailto:analopez@gmail.com">analopez@gmail.com</a>
-          </div>
-          <div class="dato">
-            <i class="fa fa-phone"></i>
-            <a href="tel:55555555">55555555</a>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div id="modal" class="modal">
-      <div class="modal-bg">
-        <div class="modal-container">
-          <div class="modal-header">
-            <h2 class="modal-title">Nuevo Contacto</h2>
-            <a><i class="fa fa-times"></i></a>
-          </div>
-          <div class="modal-body">
-            <div class="field-group">
-              <label for="nombre">Nombre:</label>
-              <input type="text" autocomplete="off" id="nombre" name="nombre" />
-            </div>
-            <div class="field-group">
-              <label for="nombre">Empresa:</label>
-              <input type="text" autocomplete="off" id="empresa" name="empresa" />
-            </div>
-            <div class="field-group">
-              <label for="nombre">Email:</label>
-              <input type="text" autocomplete="off" id="email" name="email" />
-            </div>
-            <div class="field-group">
-              <label for="nombre">Telefono:</label>
-              <input type="text" autocomplete="off" id="telefono" name="telefono" />
-            </div>
-            <ul class="errores" id="errores"></ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button">Agregar Contacto</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+         
   <script src="./script.js"></script>
 </body>
 </html>

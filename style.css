@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contactos {
+  
   margin: 0;
   padding: 0;
   list-style: none;
@@ -70,13 +71,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contacto {
+  
   background-color: #FFF;
   padding: 15px; 
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
   border-radius: 4px;
   width: 100%;
   text-align: center;
-  box-sizing: border-box
+  box-sizing: border-box;
+}
+
+.lista4 {
+  width: 400%;
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  grid-gap: 20px;
 }
 
 .actions {
@@ -130,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 .modal {
   display: none;
 }
+.button a {color: black; text-decoration: none;}
 
 .modal-bg {
   position: absolute;
