@@ -12,7 +12,7 @@
 <body>
   <div class="header">
     <h1>Agenda</h1>
-    <button class="button">+ Nuevo Contacto</button>
+    <button class="button" onclick="agregaContacto()">+ Nuevo Contacto</button>
   </div>
   <div class="main">
     <ul class="contactos" id="contactos">
@@ -38,12 +38,13 @@
         </div>
       </li>
     </ul>
+
     <div id="modal" class="modal">
       <div class="modal-bg">
         <div class="modal-container">
           <div class="modal-header">
             <h2 class="modal-title">Nuevo Contacto</h2>
-            <a><i class="fa fa-times"></i></a>
+            <a><i class="fa fa-times" onclick="javascript:cerrarContacto()"></i></a>
           </div>
           <div class="modal-body">
             <div class="field-group">
@@ -57,15 +58,17 @@
             <div class="field-group">
               <label for="nombre">Email:</label>
               <input type="text" autocomplete="off" id="email" name="email" />
+              <span id="msg"></span>
             </div>
             <div class="field-group">
               <label for="nombre">Telefono:</label>
               <input type="text" autocomplete="off" id="telefono" name="telefono" />
             </div>
-            <ul class="errores" id="errores"></ul>
+            <ul class="errores" id="errores">
+            </ul>
           </div>
           <div class="modal-footer">
-            <button class="button">Agregar Contacto</button>
+            <button class="button" id="item" type="button" onclick="validarCampos()">Agregar Contacto</button>
           </div>
         </div>
       </div>
