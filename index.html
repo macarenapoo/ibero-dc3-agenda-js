@@ -12,7 +12,7 @@
 <body>
   <div class="header">
     <h1>Agenda</h1>
-    <button class="button">+ Nuevo Contacto</button>
+    <button class="button" onclick="añadir()">+ Nuevo Contacto</button>
   </div>
   <div class="main">
     <ul class="contactos" id="contactos">
@@ -62,10 +62,13 @@
               <label for="nombre">Telefono:</label>
               <input type="text" autocomplete="off" id="telefono" name="telefono" />
             </div>
-            <ul class="errores" id="errores"></ul>
+            <ul class="errores" id="errores">
+              <ul id="msg1"></ul>
+            </ul>
+            </ul>
           </div>
           <div class="modal-footer">
-            <button class="button">Agregar Contacto</button>
+            <button class="button" onclick="validarLongitud()">Agregar Contacto</button>
           </div>
         </div>
       </div>
