@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="./style.css">
   <title>Agenda Telefónica</title>
 </head>
-<body>
+<body class="modal-open">
   <div class="header">
     <h1>Agenda</h1>
-    <button class="button">+ Nuevo Contacto</button>
+    <button class="button" onclick="añadir()">+ Nuevo Contacto</button>
   </div>
   <div class="main">
     <ul class="contactos" id="contactos">
@@ -48,11 +48,11 @@
           <div class="modal-body">
             <div class="field-group">
               <label for="nombre">Nombre:</label>
-              <input type="text" autocomplete="off" id="nombre" name="nombre" />
+              <input type="text" autocomplete="off" id="nombre" name="nombre" onsubmit="validarcampos()" />
             </div>
             <div class="field-group">
               <label for="nombre">Empresa:</label>
-              <input type="text" autocomplete="off" id="empresa" name="empresa" />
+              <input type="text" autocomplete="off" id="empresa" name="empresa">
             </div>
             <div class="field-group">
               <label for="nombre">Email:</label>
@@ -62,10 +62,11 @@
               <label for="nombre">Telefono:</label>
               <input type="text" autocomplete="off" id="telefono" name="telefono" />
             </div>
-            <ul class="errores" id="errores"></ul>
+            <ul class="errores" id="errores">
+            </ul>
           </div>
           <div class="modal-footer">
-            <button class="button">Agregar Contacto</button>
+            <button class="button" onclick="agregarcontacto()">Agregar Contacto</button>
           </div>
         </div>
       </div>
