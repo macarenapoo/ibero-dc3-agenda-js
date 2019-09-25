@@ -41,6 +41,8 @@ function mostrarContacto(contacto) {
 }
 
 function mostrarTodosLosContactos() {
+  var contenedorContactos = document.getElementById("contactos");
+  contenedorContactos.innerHTML = "";
   contactos.forEach(mostrarContacto);
 }
 
@@ -54,6 +56,61 @@ function cerrarModal() {
   var bodyTags = document.getElementsByTagName("body");
   var body = bodyTags[0];
   body.classList.remove("modal-open");
+}
+
+function validarContacto() {
+  var nombre = document.getElementById("nombre").value;
+  var email = document.getElementById("email").value;
+  var errores = [];
+
+  if (nombre.length === 0) {
+    errores.push("El nombre no puede estar vacío.");
+  }
+
+  if (email.length === 0) {
+    errores.push("El email no puede estar válido.");
+  }
+
+  if (errores.length === 0) {
+    agregarContacto();
+  } else {
+    mostrarErrores(errores);
+  }
+}
+
+function agregarContacto() {
+  var nombre = document.getElementById("nombre").value;
+  var empresa = document.getElementById("empresa").value;
+  var email = document.getElementById("email").value;
+  var telefono = document.getElementById("telefono").value;
+
+  contactos.push({
+    nombre: nombre,
+    empresa: empresa,
+    email: email,
+    telefono: telefono
+  });
+
+  mostrarTodosLosContactos();
+  limpiarFormulario();
+  cerrarModal();
+}
+
+function limpiarFormulario() {
+  document.getElementById("nombre").value = "";
+  document.getElementById("empresa").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("telefono").value = "";
+}
+
+function mostrarErrores(errores) {
+  var contenedorErrores = document.getElementById("errores");
+  contenedorErrores.innerHTML = "";
+  errores.forEach(function (error) {
+    contenedorErrores.insertAdjacentHTML('beforeend',
+      '<li>' + error + '</li>'
+    );
+  });
 }
 
 mostrarTodosLosContactos();
