@@ -17,7 +17,7 @@ function mostrarContactos(contacto) {
   contactosul.insertAdjacentHTML("beforeend",
     `<li class="contacto">
  <div class="actions">
-   <a><i class="fa fa-trash"></i></a>
+   <a onclick="eliminarcontacto(`+ index + `)"><i class="fa fa-trash"></i></a>
  </div>
  <i class="userIcon fa fa-user"></i>
  <h4 class="nombre">`+ contactos.nombre + `</h4>
@@ -38,7 +38,70 @@ function mostrarContactos(contacto) {
 </li>`);
 }
 function mostrartodosloscontactos() {
+  var contactosul = document.getElementById("contactos");
+  contactosul.innerHTML = "";
   contactos.forEach(mostrarContactos);
 }
 
+function abrirmodal() {
+  var body = document.getElementsByTagName("body");
+  var body = bodyTags[0];
+  body.classList.add("modal-open");
+}
+
+function cerrarmodal() {
+  var body = document.getElementsByTagName("body");
+  var body = bodyTags[0];
+  body.classList.remove("modal-open");
+}
+
+function validarcontacto() {
+  var nombre = document.getElementById("nombre").value;
+  var email = document.getElementById("email").value;
+  var errores = [];
+  if (nombre.lenght === 0) {
+    errores.push("El nombre no puede estar vacio");
+  }
+  if (nombre.lenght === 0) {
+    errores.push("El email no puede estar vacio");
+  }
+
+  if (errores.length === 0) {
+    //agregar contactos
+    agregarcontactos();
+  } else {
+    //mostrar errores
+  }
+}
+
+function agregarcontactos() {
+  var nombre = document.getElementById("nombre").value;
+  var empresa = document.getElementById("empresa").value;
+  var email = document.getElementById("email").value;
+  var telefono = document.getElementById("telfono").value;
+
+  contactos.push({
+    nombre,
+    empresa,
+    email,
+    telefono
+  });
+  mostrartodosloscontactos();
+  limpiarFormulario();
+  cerrarmodal();
+}
+function limpiarFormulario() {
+  var nombre = document.getElementById("nombre").value = "";
+  var empresa = document.getElementById("empresa").value = "";
+  var email = document.getElementById("email").value = "";
+  var telefono = document.getElementById("telfono").value = "";
+}
+function mostrarerrores(errores) {
+  var contenedorerrores = document.getElementById("errores");
+  errores.forEach(function (errores))
+}
+function eliminarcontacto(index) {
+  contactos.splice(index, 1);
+  mostrartodosloscontactos();
+}
 mostrartodosloscontactos();
