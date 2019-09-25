@@ -13,13 +13,13 @@ var contactos = [
   }
 ];
 
-function mostrarContacto(contacto) {
+function mostrarContacto(contacto, index) {
   // escribir adentro del ul el formato del li
   var contenedorContactos = document.getElementById("contactos");
   contenedorContactos.insertAdjacentHTML("beforeend",
     `<li class="contacto">
       <div class="actions">
-        <a><i class="fa fa-trash"></i></a>
+        <a onclick="eliminarContacto(`+ index + `)"><i class="fa fa-trash"></i></a>
       </div>
       <i class="userIcon fa fa-user"></i>
       <h4 class="nombre">`+ contacto.nombre + `</h4>
@@ -111,6 +111,11 @@ function mostrarErrores(errores) {
       '<li>' + error + '</li>'
     );
   });
+}
+
+function eliminarContacto(index) {
+  contactos.splice(index, 1);
+  mostrarTodosLosContactos();
 }
 
 mostrarTodosLosContactos();
