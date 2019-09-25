@@ -44,4 +44,16 @@ function mostrarTodosLosContactos() {
   contactos.forEach(mostrarContacto);
 }
 
+function abrirModal() {
+  var bodyTags = document.getElementsByTagName("body");
+  var body = bodyTags[0];
+  body.classList.add("modal-open");
+}
+
+function cerrarModal() {
+  var bodyTags = document.getElementsByTagName("body");
+  var body = bodyTags[0];
+  body.classList.remove("modal-open");
+}
+
 mostrarTodosLosContactos();

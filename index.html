@@ -15,7 +15,7 @@
 <body>
   <div class="header">
     <h1>Agenda</h1>
-    <button class="button">+ Nuevo Contacto</button>
+    <button class="button" onclick="abrirModal()">+ Nuevo Contacto</button>
   </div>
   <div class="main">
     <ul class="contactos" id="contactos"></ul>
@@ -24,7 +24,7 @@
         <div class="modal-container">
           <div class="modal-header">
             <h2 class="modal-title">Nuevo Contacto</h2>
-            <a><i class="fa fa-times"></i></a>
+            <a href="javascript:cerrarModal()"><i class="fa fa-times"></i></a>
           </div>
           <div class="modal-body">
             <div class="field-group">
