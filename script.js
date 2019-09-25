@@ -71,6 +71,10 @@ function validarContacto() {
     errores.push("El email no puede estar válido.");
   }
 
+  if (!validarEmail(email)) {
+    errores.push("El email no es válido");
+  }
+
   if (errores.length === 0) {
     agregarContacto();
   } else {
